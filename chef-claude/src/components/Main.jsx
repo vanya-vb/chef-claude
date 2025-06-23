@@ -9,8 +9,20 @@ export default function Main() {
     const [recipe, setRecipe] = useState("")
 
     async function getRecipe() {
-        const recipeMarkdown = await getRecipeFromMistral(ingredients)
-        setRecipe(recipeMarkdown)
+        try {
+            const response = await fetch("/api/getRecipe", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ ingredients })
+            });
+
+            const data = await response.json();
+            setRecipe(data.recipe);
+        } catch (error) {
+            console.error("Failed to get recipe:", error);
+        }
     }
 
     function addIngredient(formData) {
