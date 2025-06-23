@@ -35,7 +35,7 @@ export default function Main() {
             <form action={addIngredient} className="add-ingredient-form">
                 <input
                     type="text"
-                    placeholder="Add at least 4 ingredients"
+                    placeholder="Add at least 4 ingredients one by one"
                     aria-label="Add ingredient"
                     name="ingredient"
                 />
