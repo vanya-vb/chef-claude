@@ -1,7 +1,7 @@
 import { useState } from "react"
 import IngredientsList from "./IngredientsList"
 import ClaudeRecipe from "./ClaudeRecipe"
-import { getRecipeFromMistral } from "../api/getRecipe"
+import { getRecipeFromMistral } from "../ai"
 
 export default function Main() {
 
