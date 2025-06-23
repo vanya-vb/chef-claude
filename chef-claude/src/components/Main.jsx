@@ -19,7 +19,7 @@ export default function Main() {
 
             const data = await response.json();
             setRecipe(data.recipe);
-            
+
         } catch (error) {
             console.error("Failed to get recipe:", error);
         }
@@ -35,7 +35,7 @@ export default function Main() {
             <form action={addIngredient} className="add-ingredient-form">
                 <input
                     type="text"
-                    placeholder="e.g. oregano"
+                    placeholder="Add at least 4 ingredients"
                     aria-label="Add ingredient"
                     name="ingredient"
                 />
