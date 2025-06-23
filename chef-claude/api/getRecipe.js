@@ -9,10 +9,10 @@ export default async function handler(req, res) {
         return res.status(405).json({ error: 'Method not allowed' })
     }
 
-    const { ingredientsArr } = req.body
+    const { ingredients } = req.body
 
     try {
-        const ingredientsString = ingredientsArr.join(', ')
+        const ingredientsString = ingredients.join(', ')
         const response = await hf.chatCompletion({
             model: 'mistralai/Mixtral-8x7B-Instruct-v0.1',
             messages: [
