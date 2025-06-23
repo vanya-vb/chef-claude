@@ -19,6 +19,7 @@ export default function Main() {
 
             const data = await response.json();
             setRecipe(data.recipe);
+            
         } catch (error) {
             console.error("Failed to get recipe:", error);
         }
